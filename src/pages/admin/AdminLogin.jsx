@@ -1,17 +1,21 @@
 import { useState } from 'react';
 import { login } from '../../services/api';
 import './AdminLogin.css';
+import { useNavigate } from 'react-router-dom';
+
 
 function AdminLogin() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
+        e.preventDefault();  // previene recarga del formulario
     
         try {
             const data = await login(email, password);
             console.log(data);
+            navigate('/admindashboard'); // hook función navigate -> envía a dashboard
         } catch (error) {
             console.error("Error:", error.message);
         }

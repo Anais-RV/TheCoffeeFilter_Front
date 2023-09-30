@@ -1,7 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from '../layouts/layouts';
 import Landing from '../pages/Landing';
-import Login from '../components/login/login';
+import AdminLogin from '../pages/admin/AdminLogin';
+import AdminDashboard from '../pages/admin/admindashboard/AdminDashboard';
 
 function RouterItem() {
   return (
@@ -9,7 +10,8 @@ function RouterItem() {
         <Routes>
             <Route path='/' element={<Layout />}>
                 <Route path='/' element={<Landing />} />
-                <Route path='admin/login' element={<Login />} />
+                <Route path='/admin/login' element={<AdminLogin />} />
+                <Route path='/admindashboard' element={<AdminDashboard />} />
             </Route>
         </Routes>
     </BrowserRouter>

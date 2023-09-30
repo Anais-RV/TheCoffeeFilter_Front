@@ -1,0 +1,73 @@
+.admin-dashboard {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h2 {
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.ReactTable {
+    border: 1px solid #eee;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.ReactTable .rt-thead {
+    background-color: #f7f7f7;
+}
+
+.ReactTable .rt-thead .rt-th,
+.ReactTable .rt-thead .rt-td {
+    border-bottom: 2px solid #eee;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.ReactTable .rt-tbody .rt-tr-group:hover {
+    background-color: #f7f7f7;
+}
+
+.ReactTable .rt-tbody .rt-td {
+    border-bottom: 1px solid #eee;
+    padding: 10px;
+}
+
+.ReactTable .rt-tbody .rt-tr-group:last-child .rt-td {
+    border-bottom: none; 
+}
+
+input, select {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
