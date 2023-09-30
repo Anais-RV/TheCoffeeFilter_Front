@@ -24,10 +24,11 @@ margin-bottom: 1rem;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 33%;
+    height: 35%;
     background: rgba(255, 255, 255, 0.33);
     backdrop-filter: blur(15px);
-    border-radius: 8px
+    border-radius: 8px;
+    z-index: 1;
 }
 
 .card-content {
@@ -35,21 +36,21 @@ margin-bottom: 1rem;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 33%;
+    height: fit-content;
     flex-direction: column;
     justify-content: space-between;
     border-radius: 8px
 }
 
 .coffeeName {
-    margin: 2%;
+    padding: 2%;
     font-size: 23px;
     font-weight: bolder;
     color:#1F4F5A; 
 }
 
 .coffeeReview {
-    margin: 2%;
+    padding: 2%;
     font-size: 12px;
     font-style: normal;
     color: #241C1B; 
@@ -59,7 +60,7 @@ margin-bottom: 1rem;
     text-decoration: none; 
     font-size:  11px;
     color: #1F4F5A; 
-    margin: 2%;
+    padding: 2%;
 }
 
 .coffeeLink:hover {
