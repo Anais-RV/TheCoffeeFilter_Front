@@ -1,17 +1,16 @@
+/* eslint-disable react/prop-types */
 import './Button.css';
-import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 
-function Button({ label }) {
+function Button(props) {
 
     return (
-    <button className='button'>
-        {label}
-    </button>
+    <Link to={props.to} >
+    <button className='button'>{props.label}</button>
+    </Link>
     );
 }
 
-Button.propTypes = {
-    label: PropTypes.string.isRequired  // Validación para asegurar que label será un string
-};
 
 export default Button;
+

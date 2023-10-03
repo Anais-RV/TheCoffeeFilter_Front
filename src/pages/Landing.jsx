@@ -13,9 +13,9 @@ function landing() {
 
     <Hero></Hero>
     <TopThree></TopThree>
-    <Filter></Filter>
+    <div id="btn-search" ><Filter></Filter></div>
     <div className='content-btn'>
-    <Button label="Sugiere una nueva cafetería"></Button>
+    <Button label="Sugiere una nueva cafetería" to="/coffeeform"></Button>
     </div>
     </>
   )
