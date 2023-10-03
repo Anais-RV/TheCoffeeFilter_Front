@@ -24,46 +24,38 @@ async function makeRequest(endpoint, method = 'GET', data) {
     const response = await fetch(`${API_BASE_URL}${endpoint}`, config);
 
     if (!response.ok) {
-        throw new Error('Network response was not ok');
+        // Si la respuesta no es correcta, arroja un error con el mensaje
+        const errorMessage = await response.text();
+        throw new Error(`Error: ${response.status} - ${errorMessage}`);
     }
+
     return response.json();
 }
 
 export async function login(email, password) {
-    const response = await makeRequest('/api/admin/login', 'POST', { email, password });
-    const token = response.token; // Asegúrate de que el token se envía con esta clave
-    localStorage.setItem('authToken', token);
-    return response;
+    return makeRequest('/api/admin/login', 'POST', { email, password });
 }
 
-export function getAllCoffeeShops() {
+export const getAllCoffeeShops = () => {
     return makeRequest('/api/admin/coffeeshops/all');
 }
 
-export function updateCoffeeShop(id, data) {
+export const updateCoffeeShop = (id, data) => {
     return makeRequest(`/api/admin/coffeeshops/${id}`, 'PUT', data);
 }
 
+export const deleteCoffeeShop = (id) => {
+    return makeRequest(`/api/admin/coffeeshops/${id}`, 'DELETE');
+}
 
+// export const getCommunities = () => {
+//     return makeRequest('/api/communities');  
+// }
 
+// export const getCitiesForCommunity = (community) => {
+//     return makeRequest(`/api/cities?community=${community}`);  
+// }
 
-
-
-
-
-// const API_BASE_URL = "http://127.0.0.1:8000";
-
-// export async function login(email, password) {
-//     const response = await fetch(`${API_BASE_URL}/api/admin/login`,{
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify({ email, password })
-//     });
-
-//     if (!response.ok) {
-//         throw new Error('Network response was not ok');
-//     }
-//     return response.json();
+// export const getCafeteriasForCity = (city) => {
+//     return makeRequest(`/api/coffeeshops?city=${city}`);  
 // }
